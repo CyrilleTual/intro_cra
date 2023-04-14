@@ -1,9 +1,14 @@
 import React from "react";
+import Contact from "../Pages/Contact";
+import DisplayName from "./DisplayName";
 
 function Footer(){
     return(
         <footer>
-            <h1>footer</h1>
+            <div> ici le footer </div>
+            <Contact />
+            <DisplayName />
+            
         </footer>
     )
 }
