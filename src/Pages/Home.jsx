@@ -2,6 +2,7 @@ import Clock from "../Components/Clock.jsx"
 import Display from "../Components/Display.jsx"
 import Name from "../Components/Name.jsx"
 import Title from "../Components/Title.jsx"
+import {UseStateNumber, UseSateString, UseBoolean, UseArray } from "../Components/UseStateExemples.jsx"
 
 function Home(){
     return(
@@ -18,7 +19,6 @@ function Home(){
                 <ul>
                     <Display toDisplay={["cat", "dog", "bird"]} />
                 </ul>
-                
             </article>
 
             <article>
@@ -27,6 +27,18 @@ function Home(){
                      <Display toDisplay={["tomate", "orange", "poire"]} />
                 </ul>
             </article>
+
+            <section>
+                <h2> Utilisation de useState</h2>
+                <UseStateNumber />
+                <UseSateString />
+                <UseBoolean />
+                <UseArray />
+
+            </section>
+
+
+
 
 
 
