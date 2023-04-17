@@ -27,7 +27,6 @@ function UseSateString() {
     const [name, setName] = useState('');
     const updateName = (e) => setName(e.target.value);
     
-
     return(
         <React.Fragment>
             <h3>Strings</h3>
@@ -60,10 +59,13 @@ function UseBoolean(){
 }
 
 function UseArray(){
-    const myTodoList = ["sauver le monde", "décrocher la lune"];
+    const myTodoList = ["sauver le monde", "décrocher la lune", "tour du monde en 80 jours"];
    
     const  [ myTodo, setMyTodo] = useState(myTodoList);
     const  [ myDone, setMyDone] = useState([]);
+
+
+
 
     function itsDone (task){
         setMyDone((yetDone)=>{ 
@@ -76,11 +78,15 @@ function UseArray(){
         });
     }
 
-     function itsNotDone (e){
+    function itsNotDone (task){
+        setMyTodo((list)=>{
+            return[...list, task]
+        })
+        setMyDone ((yetDone) => {
+            return yetDone.filter ((elt) => elt != task) ;
+        })
 
     }
-
-
 
     return(
         <React.Fragment>
@@ -102,23 +108,14 @@ function UseArray(){
                 myDone.map( task => (
                     <React.Fragment>
                         <li>{task}
-                        <button onClick = {itsNotDone}> C'est à refaire </button></li>
+                        <button onClick = { () =>itsNotDone(task)}> C'est à refaire </button></li>
                     </React.Fragment> 
                 ))
 
                 }
             </p>
-            
-
-
         </React.Fragment>
     )
-
-
 }
-
-
-
-
 
 export {UseStateNumber, UseSateString, UseBoolean, UseArray}
