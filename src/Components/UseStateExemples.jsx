@@ -64,9 +64,6 @@ function UseArray(){
     const  [ myTodo, setMyTodo] = useState(myTodoList);
     const  [ myDone, setMyDone] = useState([]);
 
-
-
-
     function itsDone (task){
         setMyDone((yetDone)=>{ 
             return [...yetDone, task]
@@ -91,29 +88,21 @@ function UseArray(){
     return(
         <React.Fragment>
             <h3>Arrays</h3>
-            <p> todo : {
-
-                myTodo.map( task => (
+            <ul> todo : 
+                {myTodo.map( task => (
                     <React.Fragment>
-                        <li>{task}
-                        <button onClick = {() => itsDone(task)}> C'est Fait </button></li>
+                        <li>{task}<button onClick = {() => itsDone(task)}> C'est Fait </button></li>
                     </React.Fragment> 
-                ))
+                ))}
+            </ul>
 
-                }
-            </p>
-
-            <p> Done : {
-
-                myDone.map( task => (
+            <ul> Done : 
+                {myDone.map( task => (
                     <React.Fragment>
-                        <li>{task}
-                        <button onClick = { () =>itsNotDone(task)}> C'est à refaire </button></li>
+                        <li>{task}<button onClick = {() => itsNotDone(task)}> C'est à refaire </button></li>
                     </React.Fragment> 
-                ))
-
-                }
-            </p>
+                ))}
+            </ul>
         </React.Fragment>
     )
 }
