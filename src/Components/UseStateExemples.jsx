@@ -107,4 +107,46 @@ function UseArray(){
     )
 }
 
-export {UseStateNumber, UseSateString, UseBoolean, UseArray}
+function UseObject(){
+
+    const [ identity, setIdentity] = useState(
+        { 
+            name: "",
+            firstName: "",
+        }
+    )
+
+    const onChangeName = (e) => {
+        setIdentity ((currentId) => {
+            return {...currentId, name: e.target.value}
+        })
+    }
+
+    const onChangeFirstName = (e) => {
+        setIdentity ((currentId) => {
+            return {...currentId, firstName: e.target.value}
+        })
+    }
+
+    return(
+        <React.Fragment>
+            <h3>Object</h3>
+            <form action="#">
+
+                <label htmlFor="name">Votre Nom : </label>
+                <input id="name" onChange = {onChangeName} type="text" />
+
+                <label htmlFor="firstName">Votre Prenom :</label>
+                <input id="firstName" onChange = {onChangeFirstName} type="text" />
+
+            </form>
+
+            <p> Bonjour {identity.firstName}  {identity.name}</p>
+
+
+        </React.Fragment>
+    )
+}
+
+
+export {UseStateNumber, UseSateString, UseBoolean, UseArray, UseObject}

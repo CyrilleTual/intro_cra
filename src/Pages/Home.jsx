@@ -2,7 +2,7 @@ import Clock from "../Components/Clock.jsx"
 import Display from "../Components/Display.jsx"
 import Name from "../Components/Name.jsx"
 import Title from "../Components/Title.jsx"
-import {UseStateNumber, UseSateString, UseBoolean, UseArray } from "../Components/UseStateExemples.jsx"
+import {UseStateNumber, UseSateString, UseBoolean, UseArray, UseObject } from "../Components/UseStateExemples.jsx"
 
 function Home(){
     return(
@@ -34,6 +34,7 @@ function Home(){
                 <UseSateString />
                 <UseBoolean />
                 <UseArray />
+                <UseObject />
 
             </section>
 
